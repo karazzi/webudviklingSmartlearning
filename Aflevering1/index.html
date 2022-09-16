@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Pizza Order Service</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Bestil din pizza</h1>
+
+                <form action="https://pizzaordering-smartlearning.azurewebsites.net/api/Gem" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Navn"/>
+                        <label for="customerName">Navn</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"/>
+                        <label for="email">E-mail</label>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h3>Vælg pizza</h3>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pizzaNumber" value="1" id="pizza1">
+                            <label for="pizza1" class="form-check-label">Margarita</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pizzaNumber" value="2" id="pizza2">
+                            <label for="pizza2" class="form-check-label">Quattro Formaggi</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pizzaNumber" value="3" id="pizza3">
+                            <label for="pizza3" class="form-check-label">Napoli</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pizzaNumber" value="4" id="pizza4">
+                            <label for="pizza4" class="form-check-label">Prosciutto</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pizzaNumber" value="5" id="pizza5">
+                            <label for="pizza5" class="form-check-label">Calzone</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <select class="form-select" name="size">
+                            <option selected>Vælg størrelse</option>
+                            <option value="child">Barn</option>
+                            <option value="normal">Normal</option>
+                            <option value="family">Familie</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h3>Ekstra tilbehør</h3>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="extra1" value="garlic" name="extraToppings">
+                            <label for="extra1" class="form-check-label">Hvidløg</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="extra2" value="cheese" name="extraToppings">
+                            <label for="extra2" class="form-check-label">Ost</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="extra3" value="chili" name="extraToppings">
+                            <label for="extra3" class="form-check-label">Chili</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="extra4" value="pineapple" name="extraToppings">
+                            <label for="extra4" class="form-check-label">Ananas</label>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input id="deliveryDate" class="form-control" type="date" />
+                        <label for="deliveryDate">Leveringsdato</label>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <label for="strength" class="form-label">Styrke (hvis du har valgt chili/hvidløg)</label>
+                                <input type="range" class="form-range slider" min="1" max="5" step="1" id="strength" name="strength" oninput="this.nextElementSibling.value = this.value">        
+                            </div>
+                            <div class="col-4">
+                                <span class="input-group-text" id="rangeOutput">10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="text" style="display: none;" name="navn" value="FrederikSteenfeldt">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+
+    <footer class="bg-light text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Github -->
+        <a
+          class="btn btn-primary btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          >
+          <i class="bi bi-github"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+  </div>
+  <!-- End of .container -->
+
+    <script>
+        var slider = document.getElementById("strength");
+        var output = document.getElementById("rangeOutput");
+        output.innerHTML = slider.value;
+        slider.oninput = function(){
+            output.innerHTML = this.value;
+        }
+    </script>
+
+    
+</body>
+</html>
