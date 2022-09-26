@@ -17,9 +17,17 @@
 
     <script> 
         $(function(){
-          $("#headerContent").load("header.html");
-          $("#footerContent").load("footer.html");
-          $("#mainContent").load("pages/home.html");
+            const urlParams = new URLSearchParams(location.search);
+            let page = '';
+            if(urlParams.has("page")) {
+                page = urlParams.get("page");
+            } else {
+                page = "timetable";
+            }
+                        
+            $("#headerContent").load("header.html");
+            $("#footerContent").load("footer.html");
+            $("#mainContent").load(`pages/${page}.html`);
         });
     </script>
 </head>
@@ -31,5 +39,7 @@
     <div id="footerContent"></div>
 
     <script src="scripts/script.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 </body>
 </html>
