@@ -1,1 +1,72 @@
 <h1>Timeregistrering</h1>
+<div class="container mb-3">
+    <button class="btn btn-outline-success">Registrér timer</button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <form>
+                <select name="coachFilter" id="coachFilter" class="form-select">
+                    <option selected value="">Vælg træner</option>
+                    <option value="Frederik">Frederik</option>
+                    <option value="Paw">Paw</option>
+                    <option value="Sebastian">Sebastian</option>
+                    <option value="Flemming">Flemming</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    
+    <table class="table" id="timeTable">
+        <thead>
+            <tr>
+                <th scope="col" style="display:none;">Id</th>
+                <th scope="col">Dato</th>
+                <th scope="col">Træner</th>
+                <th scope="col">Timer</th>
+                <th scope="col">Udbetalt</th>
+            </tr>
+        </thead>
+        <tbody id="timeTableBody">
+            <tr>
+                <th style="display: none;"><input type="text" value="1" name="timeId-1"></th>
+                <th scope="row">21/9-2022</th>
+                <td>Frederik</td>
+                <td>2 timer</td>
+                <td><input type="checkbox" name="udbetalt-1" id="udbetalt-1"></td>
+            </tr>
+            <tr>
+                <th style="display: none;"><input type="text" value="2" name="timeId-2"></th>
+                <th scope="row">20/9-2022</th>
+                <td>Paw</td>
+                <td>2 timer</td>
+                <td><input type="checkbox" name="udbetalt-2" id="udbetalt-2"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success" id="saveButton">Gem</button>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#coachFilter").on("change", function(){
+            var filterValue = $(this).val().toLowerCase();
+            $("#timeTableBody tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(filterValue) > -1);
+            });
+        });
+
+        var table = $("#timeTable").DataTable({
+            order: [[0, 'asc']],
+            dom: 'rt<"bottom"ip><"clear">'
+        });
+
+        $('#saveButton').click(function() {
+            var data = table.$('input').serialize();
+            alert('The following data would have been submitted: \n\n' + data.substr(0, 120) + '...');
+        });
+
+
+    });
+    
+</script>

@@ -11,3 +11,7 @@ body {
     top: 0;
     text-align: center;
 }
+
+.table-filter-container {
+    text-align: right;
+}
