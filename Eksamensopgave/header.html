@@ -8,14 +8,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="javascript:loadContent('home')">Hjem</a>
-              <a class="nav-link" href="javascript:loadContent('timetable')">Timeregistrering</a>
+              <a class="nav-link active" aria-current="page" href="?page=home">Hjem</a>
+              <a class="nav-link" href="?page=timetable">Timeregistrering</a>
             </div>
+        
+    
+            <form class="d-flex ms-auto" action="#">
+                <input class="form-control me-2" type="text" placeholder="Brugernavn" aria-label="Username">
+                <input class="form-control me-2" type="password" placeholder="Adgangskode" aria-label="Password">
+                <button class="btn btn-outline-success" type="submit">Login</button>
+            </form>
         </div>
     </div>
-        <form class="d-flex" action="#">
-            <input class="form-control me-2" type="text" placeholder="Brugernavn" aria-label="Username">
-            <input class="form-control me-2" type="password" placeholder="Adgangskode" aria-label="Password">
-            <button class="btn btn-outline-success" type="submit">Login</button>
-        </form>
 </nav>
