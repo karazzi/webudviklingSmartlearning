@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Hangman</title>
+        <meta charset="utf-8"/>        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="hangman.js"></script>
+        <link rel="stylesheet" href="hangman.css"/>
+    </head>
+    <body>
+        <h1>Velkommen til Hangman</h1>
+        <p>
+            Kategorien er: <br/>
+            <span class="kategori">Husholdningsapparat</span>
+        </p>
+        <div id="secret-word"></div>
+        <div>
+            <span id="instruktioner">
+                    Skriv et bogstav, og tryk på knappen!
+            </span>
+        </div>
+        <input type="text" width="1" maxlength="1" id="Letter"/>
+        <input type="button" onclick="addLetter()" value="Gæt"/>
+    </body>
+
+    <script>
+        $(document).ready(init);
+    </script>
+</html>
+
