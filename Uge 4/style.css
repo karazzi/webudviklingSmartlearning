@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+}
+
+#tableTitle {
+  transform: rotate(-90deg);
+}
+
+table, th, td {
+  border: 2px solid;
+}
+
+.no-border{
+  border: 0;
+}
+
+.code-field {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}
+
