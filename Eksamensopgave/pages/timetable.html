@@ -17,33 +17,35 @@
         </div>
     </div>
     
-    <table class="table" id="timeTable">
-        <thead>
-            <tr>
-                <th scope="col" style="display:none;">Id</th>
-                <th scope="col">Dato</th>
-                <th scope="col">Træner</th>
-                <th scope="col">Timer</th>
-                <th scope="col">Udbetalt</th>
-            </tr>
-        </thead>
-        <tbody id="timeTableBody">
-            <tr>
-                <th style="display: none;"><input type="text" value="1" name="timeId-1"></th>
-                <th scope="row">21/9-2022</th>
-                <td>Frederik</td>
-                <td>2 timer</td>
-                <td><input type="checkbox" name="udbetalt-1" id="udbetalt-1"></td>
-            </tr>
-            <tr>
-                <th style="display: none;"><input type="text" value="2" name="timeId-2"></th>
-                <th scope="row">20/9-2022</th>
-                <td>Paw</td>
-                <td>2 timer</td>
-                <td><input type="checkbox" name="udbetalt-2" id="udbetalt-2"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table" id="timeTable" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col" style="display:none;">Id</th>
+                    <th scope="col">Dato</th>
+                    <th scope="col">Træner</th>
+                    <th scope="col">Timer</th>
+                    <th scope="col">Udbetalt</th>
+                </tr>
+            </thead>
+            <tbody id="timeTableBody">
+                <tr>
+                    <th style="display: none;"><input type="text" value="1" name="timeId-1"></th>
+                    <th scope="row">21/9-2022</th>
+                    <td>Frederik</td>
+                    <td>2 timer</td>
+                    <td><input type="checkbox" name="udbetalt-1" id="udbetalt-1"></td>
+                </tr>
+                <tr>
+                    <th style="display: none;"><input type="text" value="2" name="timeId-2"></th>
+                    <th scope="row">20/9-2022</th>
+                    <td>Paw</td>
+                    <td>2 timer</td>
+                    <td><input type="checkbox" name="udbetalt-2" id="udbetalt-2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <button type="submit" class="btn btn-success" id="saveButton">Gem</button>
 </div>
 
