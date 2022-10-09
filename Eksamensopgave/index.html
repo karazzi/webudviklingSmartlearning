@@ -12,18 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/navbar.css">
     
     <title>HTK Trænerportal</title>
-
-    <script> 
-        $(function(){
-            let page = getCurrentPage();
-                        
-            $("#headerContent").load("header.html");
-            $("#footerContent").load("footer.html");
-            $("#mainContent").load(`pages/${page}.html`);
-        });
-    </script>
 </head>
 <body class="d-flex flex-column h-100">
     <div id="headerContent"></div>
