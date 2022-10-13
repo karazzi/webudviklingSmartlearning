@@ -4,17 +4,17 @@
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
-            <span class="close">&times;</span>
             <h2>Registrér timer</h2>
+            <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-            <form action="#">
-                <input type="text" placeholder="Dato">
-                <input type="number" placeholder="Timer">
+            <form id="hourRegistrationForm">
+                <p><input type="text" name="date" placeholder="Dato" id="datepicker"></p>
+                <p><input type="number" name="hours" placeholder="Timer" id="hours"></p>
             </form>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-success">Gem</button>
+            <button class="btn btn-success" id="saveRegistrationButton">Gem</button>
         </div>
     </div>
 
