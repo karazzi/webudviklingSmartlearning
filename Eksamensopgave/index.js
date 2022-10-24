@@ -9,7 +9,7 @@ function getCurrentPage() {
     if (urlParams.has("page")) {
         page = urlParams.get("page");
     } else {
-        page = "timetable";
+        page = "home";
     }
     return page;
 }
