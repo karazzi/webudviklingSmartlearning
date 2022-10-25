@@ -30,7 +30,6 @@ $(function() {
     saveBtn.onclick = function() {
         let form = document.querySelector("#hourRegistrationForm");
         let data = new FormData(form);
-        console.log(data);
         for(let entry of data){
             console.log(entry);
         }
